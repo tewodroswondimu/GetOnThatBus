@@ -20,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Zoom into chicaca map when app first launches
+    CLLocationCoordinate2D centerCoordinate = CLLocationCoordinate2DMake(41.87808499, -87.6329);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
+    MKCoordinateRegion region = MKCoordinateRegionMake(centerCoordinate, span);
+    [self.mapView setRegion:region animated:YES];
+
     self.busStops = [[NSMutableArray alloc] init];
     [self getBusStopsFromJSONURLString:@"https://s3.amazonaws.com/mobile-makers-lib/bus.json"];
     
@@ -62,6 +68,8 @@
         for (BusStop *busStop in self.busStops) {
             MKPointAnnotation *annotation = [MKPointAnnotation new];
             annotation.coordinate = busStop.coordinate;
+            annotation.title = busStop.busStopName;
+            annotation.subtitle = busStop.routes;
             [self.mapView addAnnotation:annotation];
 
         }
@@ -70,6 +78,16 @@
 
 #pragma mark MKMapView
 
+// Show callout when pin annotation is tapped
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    pin.canShowCallout = YES;
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    return pin;
+}
+
+// When the pin is tapped show the
 
 
 @end
