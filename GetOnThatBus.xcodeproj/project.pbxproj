@@ -14,6 +14,9 @@
 		18A9C70C1A6F123200C4B37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70B1A6F123200C4B37D /* Images.xcassets */; };
 		18A9C70F1A6F123200C4B37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9C70D1A6F123200C4B37D /* LaunchScreen.xib */; };
 		18A9C71B1A6F123200C4B37D /* GetOnThatBusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C71A1A6F123200C4B37D /* GetOnThatBusTests.m */; };
+		18A9C7251A6F123C00C4B37D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A9C7241A6F123C00C4B37D /* MapKit.framework */; };
+		18A9C7281A6F13DE00C4B37D /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C7271A6F13DE00C4B37D /* Parser.m */; };
+		18A9C72B1A6F155B00C4B37D /* BusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C72A1A6F155B00C4B37D /* BusStop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,11 @@
 		18A9C7141A6F123200C4B37D /* GetOnThatBusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetOnThatBusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A9C7191A6F123200C4B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A9C71A1A6F123200C4B37D /* GetOnThatBusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetOnThatBusTests.m; sourceTree = "<group>"; };
+		18A9C7241A6F123C00C4B37D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		18A9C7261A6F13DE00C4B37D /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		18A9C7271A6F13DE00C4B37D /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
+		18A9C7291A6F155B00C4B37D /* BusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStop.h; sourceTree = "<group>"; };
+		18A9C72A1A6F155B00C4B37D /* BusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A9C7251A6F123C00C4B37D /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 		18A9C6F21A6F123200C4B37D = {
 			isa = PBXGroup;
 			children = (
+				18A9C7241A6F123C00C4B37D /* MapKit.framework */,
 				18A9C6FD1A6F123200C4B37D /* GetOnThatBus */,
 				18A9C7171A6F123200C4B37D /* GetOnThatBusTests */,
 				18A9C6FC1A6F123200C4B37D /* Products */,
@@ -83,6 +93,10 @@
 			children = (
 				18A9C7021A6F123200C4B37D /* AppDelegate.h */,
 				18A9C7031A6F123200C4B37D /* AppDelegate.m */,
+				18A9C7261A6F13DE00C4B37D /* Parser.h */,
+				18A9C7271A6F13DE00C4B37D /* Parser.m */,
+				18A9C7291A6F155B00C4B37D /* BusStop.h */,
+				18A9C72A1A6F155B00C4B37D /* BusStop.m */,
 				18A9C7051A6F123200C4B37D /* ViewController.h */,
 				18A9C7061A6F123200C4B37D /* ViewController.m */,
 				18A9C7081A6F123200C4B37D /* Main.storyboard */,
@@ -219,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A9C7281A6F13DE00C4B37D /* Parser.m in Sources */,
 				18A9C7071A6F123200C4B37D /* ViewController.m in Sources */,
+				18A9C72B1A6F155B00C4B37D /* BusStop.m in Sources */,
 				18A9C7041A6F123200C4B37D /* AppDelegate.m in Sources */,
 				18A9C7011A6F123200C4B37D /* main.m in Sources */,
 			);
