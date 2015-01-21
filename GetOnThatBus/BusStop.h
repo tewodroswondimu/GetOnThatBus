@@ -15,6 +15,7 @@
 @property NSString *busStopName;
 @property NSString *direction;
 @property NSString *routes;
+@property NSString *inter_modal;
 
 @property CLLocationCoordinate2D coordinate;
 

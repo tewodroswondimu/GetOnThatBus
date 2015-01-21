@@ -59,7 +59,9 @@
             busStop.routes = resultBusStopDictionary[@"routes"];
             busStop.busStopName = resultBusStopDictionary[@"cta_stop_name"];
             busStop.direction = resultBusStopDictionary[@"direction"];
-
+            if ([resultBusStopDictionary objectForKey:@"inter_modal"]) {
+                busStop.inter_modal = resultBusStopDictionary[@"inter_modal"];
+            }
             busStop.coordinate = CLLocationCoordinate2DMake([resultBusStopDictionary[@"latitude"] doubleValue], [resultBusStopDictionary[@"longitude"] doubleValue]);
 
             // Add the comment to the member array
@@ -73,6 +75,7 @@
             annotation.title = busStop.busStopName;
             annotation.subtitle = busStop.routes;
             annotation.busStop = busStop;
+
             [self.mapView addAnnotation:annotation];
 
         }
@@ -85,8 +88,20 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    BusStopAnnotation *annotationBusStop = annotation;
+    if (annotationBusStop.busStop.inter_modal != nil) {
+        NSString *innerModal = annotationBusStop.busStop.inter_modal;
+        if ([innerModal isEqualToString:@"Pace"]) {
+            pin.pinColor = MKPinAnnotationColorGreen;
+        }
+        else if ([innerModal isEqualToString:@"Metra"])
+        {
+            pin.pinColor = MKPinAnnotationColorPurple;
+        }
+    }
     pin.canShowCallout = YES;
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    pin.animatesDrop = YES;
     return pin;
 }
 

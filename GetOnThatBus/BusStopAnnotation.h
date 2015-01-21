@@ -12,6 +12,6 @@
 
 @interface BusStopAnnotation : MKPointAnnotation
 
-@property BusStop *busStop; 
+@property BusStop *busStop;
 
 @end
