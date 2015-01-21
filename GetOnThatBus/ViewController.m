@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "BusStopDetailsViewController.h"
 #import "BusStop.h"
+#import "BusStopAnnotation.h"
 
 @interface ViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -66,10 +68,11 @@
 
         // Make an annotation for every bus stop
         for (BusStop *busStop in self.busStops) {
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            BusStopAnnotation *annotation = [BusStopAnnotation new];
             annotation.coordinate = busStop.coordinate;
             annotation.title = busStop.busStopName;
             annotation.subtitle = busStop.routes;
+            annotation.busStop = busStop;
             [self.mapView addAnnotation:annotation];
 
         }
@@ -87,7 +90,17 @@
     return pin;
 }
 
-// When the pin is tapped show the
+// When the accesory button is tapped push to a new view controller
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    [self performSegueWithIdentifier:@"BusStopDetailsSegue" sender:view.annotation];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(BusStopAnnotation *)sender
+{
+    BusStopDetailsViewController *busStopDetailsVC = segue.destinationViewController;
+    busStopDetailsVC.busStop = sender.busStop;
+}
 
 
 @end

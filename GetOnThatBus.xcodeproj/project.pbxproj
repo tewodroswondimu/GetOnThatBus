@@ -17,6 +17,8 @@
 		18A9C7251A6F123C00C4B37D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18A9C7241A6F123C00C4B37D /* MapKit.framework */; };
 		18A9C7281A6F13DE00C4B37D /* Parser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C7271A6F13DE00C4B37D /* Parser.m */; };
 		18A9C72B1A6F155B00C4B37D /* BusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C72A1A6F155B00C4B37D /* BusStop.m */; };
+		18A9C72E1A6F247900C4B37D /* BusStopDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C72D1A6F247900C4B37D /* BusStopDetailsViewController.m */; };
+		18A9C7351A6F33E900C4B37D /* BusStopAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A9C7341A6F33E900C4B37D /* BusStopAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		18A9C7271A6F13DE00C4B37D /* Parser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Parser.m; sourceTree = "<group>"; };
 		18A9C7291A6F155B00C4B37D /* BusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStop.h; sourceTree = "<group>"; };
 		18A9C72A1A6F155B00C4B37D /* BusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStop.m; sourceTree = "<group>"; };
+		18A9C72C1A6F247900C4B37D /* BusStopDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopDetailsViewController.h; sourceTree = "<group>"; };
+		18A9C72D1A6F247900C4B37D /* BusStopDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopDetailsViewController.m; sourceTree = "<group>"; };
+		18A9C7331A6F33E900C4B37D /* BusStopAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusStopAnnotation.h; sourceTree = "<group>"; };
+		18A9C7341A6F33E900C4B37D /* BusStopAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusStopAnnotation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +99,10 @@
 			children = (
 				18A9C7021A6F123200C4B37D /* AppDelegate.h */,
 				18A9C7031A6F123200C4B37D /* AppDelegate.m */,
-				18A9C7261A6F13DE00C4B37D /* Parser.h */,
-				18A9C7271A6F13DE00C4B37D /* Parser.m */,
-				18A9C7291A6F155B00C4B37D /* BusStop.h */,
-				18A9C72A1A6F155B00C4B37D /* BusStop.m */,
-				18A9C7051A6F123200C4B37D /* ViewController.h */,
-				18A9C7061A6F123200C4B37D /* ViewController.m */,
+				18A9C7321A6F339800C4B37D /* CustomObjects */,
+				18A9C7311A6F24A600C4B37D /* Controller */,
+				18A9C7301A6F249800C4B37D /* Models */,
+				18A9C72F1A6F248100C4B37D /* ViewControllers */,
 				18A9C7081A6F123200C4B37D /* Main.storyboard */,
 				18A9C70B1A6F123200C4B37D /* Images.xcassets */,
 				18A9C70D1A6F123200C4B37D /* LaunchScreen.xib */,
@@ -131,6 +135,44 @@
 				18A9C7191A6F123200C4B37D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18A9C72F1A6F248100C4B37D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18A9C7051A6F123200C4B37D /* ViewController.h */,
+				18A9C7061A6F123200C4B37D /* ViewController.m */,
+				18A9C72C1A6F247900C4B37D /* BusStopDetailsViewController.h */,
+				18A9C72D1A6F247900C4B37D /* BusStopDetailsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		18A9C7301A6F249800C4B37D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18A9C7291A6F155B00C4B37D /* BusStop.h */,
+				18A9C72A1A6F155B00C4B37D /* BusStop.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		18A9C7311A6F24A600C4B37D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18A9C7261A6F13DE00C4B37D /* Parser.h */,
+				18A9C7271A6F13DE00C4B37D /* Parser.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		18A9C7321A6F339800C4B37D /* CustomObjects */ = {
+			isa = PBXGroup;
+			children = (
+				18A9C7331A6F33E900C4B37D /* BusStopAnnotation.h */,
+				18A9C7341A6F33E900C4B37D /* BusStopAnnotation.m */,
+			);
+			name = CustomObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A9C72E1A6F247900C4B37D /* BusStopDetailsViewController.m in Sources */,
 				18A9C7281A6F13DE00C4B37D /* Parser.m in Sources */,
 				18A9C7071A6F123200C4B37D /* ViewController.m in Sources */,
+				18A9C7351A6F33E900C4B37D /* BusStopAnnotation.m in Sources */,
 				18A9C72B1A6F155B00C4B37D /* BusStop.m in Sources */,
 				18A9C7041A6F123200C4B37D /* AppDelegate.m in Sources */,
 				18A9C7011A6F123200C4B37D /* main.m in Sources */,
